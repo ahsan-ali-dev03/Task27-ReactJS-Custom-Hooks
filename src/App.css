@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  padding: 10px 0 30px;
+}
+
+.app h1 {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  margin: 10px 0 12px;
+}
+
+.photo-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 0 28px;
+}
+
+.photo-card {
+  height: 190px;
+  border: 2px solid #666;
+  background: #000;
+  text-align: center;
+  padding: 14px 10px 8px;
+  overflow: hidden;
+
+  /* Smooth border color change */
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.photo-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.photo-card p {
+  color: white;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Different border colors when cursor moves over cards */
+
+.photo-card:nth-child(4n + 1):hover {
+  border-color: #ff1493;
+}
+
+.photo-card:nth-child(4n + 2):hover {
+  border-color: #00aaff;
+}
+
+.photo-card:nth-child(4n + 3):hover {
+  border-color: #00ff66;
+}
+
+.photo-card:nth-child(4n + 4):hover {
+  border-color: #ff8c00;
+}
+
+/* Slight effect when hovering */
+
+.photo-card:hover {
+  transform: scale(1.01);
+}
+
+/* Loading */
+
+.status {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+/* Error */
+
+.error {
+  text-align: center;
+  color: red;
+  font-size: 18px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .photo-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .photo-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .photo-container {
+    grid-template-columns: 1fr;
+  }
+}
